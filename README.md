@@ -1,4 +1,4 @@
-# observable-path-store
+# Observable Path Store
 A key value observable pathed store
 
 ``` js
