@@ -26,3 +26,15 @@ var store = new A()
 store.modify('animals', 'Animals')
 assert(store.get('animals'), 'Animals')
 ```
+
+## Public API
+
+```js
+ObservablePathStore.prototype = {
+  subscribe: function (path, fn) {},
+  unsubscribe: function (path, fn) {},
+  fire: function (path) {},
+  modify: function (path, value, fire = false) {},
+  get: function (path) {}
+}
+```
