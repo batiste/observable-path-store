@@ -58,4 +58,20 @@ describe('store', function () {
     store.modify('animals', 'Animals')
     assert(store.get('animals'), 'Animals')
   })
+  it('can be inherited usign old method', function () {
+    function A () {
+      ObservablePathStore.call(this)
+    }
+    A.prototype = ObservablePathStore.prototype
+    var store = new A()
+    store.modify('animals', 'Animals')
+    assert(store.get('animals'), 'Animals')
+  })
+  it('can be inherited using extend', function () {
+    class A extends ObservablePathStore {
+    }
+    var store = new A()
+    store.modify('animals', 'Animals')
+    assert(store.get('animals'), 'Animals')
+  })
 })
