@@ -12,3 +12,17 @@ store.subscribe('animals', (value) => {
 })
 store.fire('animals.cats')
 ```
+
+
+## How to inherit
+
+It is usually better to use composition but if prefer you can inherit the
+class
+
+```js
+class A extends ObservablePathStore {
+}
+var store = new A()
+store.modify('animals', 'Animals')
+assert(store.get('animals'), 'Animals')
+```
